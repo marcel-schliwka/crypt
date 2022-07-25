@@ -14,7 +14,7 @@ elif [ -f "$1" ] && [ "$1" != *.gpg ]; then
     exit 0
 elif [[ "$1" == *.gpg ]]; then
     echo "Decrypting GPG File"
-    gpg -d $1
+    gpg --output $1.decrypted --decrypt $1
     exit 0
 else
     echo "Check your input! Somethings wrong!"
